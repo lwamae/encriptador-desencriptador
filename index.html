@@ -19,11 +19,23 @@
     <main>
         <div class="contenedor">
             <div class="ingresar-texto">
-                <textarea cols="21" rows="10" required placeholder="Ingrese el texto aqui"></textarea>
+                <textarea required placeholder="Ingrese el texto aqui"></textarea>
+
+                <div class="advertencia">
+                    <img src="assets/exclamation.png" alt="Advertencia" width="16px" height="16px">
+                    <p>Solo letras minúsculas y sin acentos</p>
+                </div>
+
+                <div class="contenedor-botones">
+                    <button class="btn-encriptar">Encriptar</button>
+                    <button class="btn-desencriptar">Desencriptar</button>
+                </div>
             </div>
 
             <div class="resultados">
-                <p>Resultados</p>
+                <div class="card">
+                    <p>Resultados</p>
+                </div>
 
             </div>
         </div>

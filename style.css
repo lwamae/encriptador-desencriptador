@@ -31,6 +31,8 @@ body{
     margin: 56px 16px 0px 16px;
     border: 0;
     background-color: transparent;
+    width: 11em;
+    height: 15em;
 }
 
 textarea:focus,
@@ -44,7 +46,54 @@ button:focus {
     opacity: 1; /* Firefox */
 }
 
+.advertencia{
+    display: flex;
+    justify-content: left;
+    gap: 8px;
+    margin: 16px;
+}
+
+.contenedor-botones{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contenedor-botones button {
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 24px;
+    width: 343px;
+    height: 67px;
+    border-style: solid;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.btn-encriptar{
+    background: #0A3871;
+    border-color: #0A3871;
+    color:white;
+}
+
+.btn-desencriptar{
+    background: white;
+    border-color: #0A3871;
+    color: #0A3871;
+}
+
+.ingresar-texto p{
+    font-family: 'Inter', sans-serif;
+    color: #495057;
+    margin: 0px 16px 0px 0px;
+}
+
 .resultados{
+    width: 100%;
+}
+
+.card{    
     width: 400px;
     height: 944px;
     left: 1000px;
@@ -55,4 +104,9 @@ button:focus {
     /* shadow */
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
+}
+
+@media screen and (min-width:768px){
+    
+
 }
