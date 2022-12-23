@@ -20,6 +20,12 @@ body{
     height: 48px;
 }
 
+.ingresar-texto, .contenedor-botones, .resultados, .texto-encriptado, .sin-resultados {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .ingresar-texto textarea{
     font-family: 'Inter', sans-serif;
     font-size: 32px;
@@ -27,7 +33,6 @@ body{
     margin: 56px 16px 16px 16px;
     border: 0;
     background-color: transparent;
-    width: 11em;
     height: 15em;
 }
 
@@ -47,12 +52,6 @@ button:focus {
     justify-content: left;
     gap: 8px;
     margin: 16px;
-}
-
-.contenedor-botones, .resultados, .texto-encriptado, .sin-resultados {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .contenedor-botones button {
@@ -136,3 +135,7 @@ button:focus {
     
 
 }
+
+
+
+/* todo: la animacion de pressing para los botones solo funciona en mobile */
