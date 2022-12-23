@@ -49,19 +49,16 @@ button:focus {
     margin: 16px;
 }
 
-.contenedor-botones{
+.contenedor-botones, .resultados, .texto-encriptado, .sin-resultados {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 24px;
 }
 
 .contenedor-botones button {
-    margin: 0 auto;
+    margin: 0 16px 24px 16px;
     border-radius: 24px;
-    width: 343px;
     height: 67px;
-    border: 2px solid #0A3871;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
 }
@@ -91,24 +88,46 @@ button:focus {
     /* shadow */
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
-.resultados p{
+.sin-resultados {
+    /* display: none; */
+    padding: 32px;
+}
+
+.sin-mensaje-notif {
+    margin: 0 auto 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;    
+    color: #343A40;
+}
+
+.sin-mensaje-notif-dos {
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #495057;
+}
+
+.texto-encriptado{
+    display: none;
+}
+
+.texto-encriptado p{
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     color: #495057;
     margin: 32px 32px 0 32px;
 }
 
-.resultados button{
+.texto-encriptado button{
     margin: 32px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    border: 2px solid #0A3871;
     border-radius: 24px;
     height: 67px;
 }
