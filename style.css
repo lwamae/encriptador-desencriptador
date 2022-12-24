@@ -20,7 +20,7 @@ body{
     height: 48px;
 }
 
-.ingresar-texto, .contenedor-botones, .resultados, .texto-encriptado, .sin-resultados {
+.ingresar-texto, .contenedor-botones, .resultados, .box-texto-encriptado, .sin-resultados {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -112,18 +112,19 @@ button:focus {
     color: #495057;
 }
 
-.texto-encriptado{
+.box-texto-encriptado{
     display: none;
 }
 
-.texto-encriptado p{
+.box-texto-encriptado p{
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     color: #495057;
     margin: 32px 32px 0 32px;
+    text-align-last: left;
 }
 
-.texto-encriptado button{
+.box-texto-encriptado button{
     margin: 32px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;

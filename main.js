@@ -1,34 +1,59 @@
-/*
-Las "llaves" de encriptación que utilizaremos son las siguientes:
-
-La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat"
-*/
+let texto;
 
 function encriptarFuncion(){
-    let texto = document.getElementById("texto-ingresado").value;
-
-    if(/([A-Z?!@$#%*&_()áéíóúÁÉÍÓÚñ])/.test(texto)){
+    texto = document.getElementById("texto-ingresado").value;
+    // regex expression
+    if(/([A-ZáàâãéèêÉíïÍóôõöÓúÚçñ])/.test(texto)){
         alert("El texto no esta en el siguiente formato: \nSolo letras minúsculas y sin acentos");
+    } else if(texto.length == 0) {        
+        alert("Ingrese el texto que desees encriptar o desencriptar");
     }else{
-        // regex expression
-        const reg1 = /red/gm;
-        const reg2 = /blue/gm;
+        const reemplazo = {
+            "e": "enter",
+            "i": "imes",
+            "a": "ai",
+            "o": "ober",
+            "u": "ufat"
+        };
 
-        const newStr1 = texto.replace(reg1, "--");
-        const newStr2 = texto.replace(reg2, "--");
-        console.log(newStr1);
-        console.log(newStr2);
+        Object.keys(reemplazo).forEach((key) => {
+            texto = texto.replaceAll(key, reemplazo[key]);
+        });
+        //console.log(texto);
+        document.querySelector(".sin-resultados").style.display = "none";
+        document.querySelector(".box-texto-encriptado").style.display = "flex";
+        document.querySelector(".texto-encriptado").innerHTML = texto;
     }
 };
 
 function desencriptarFuncion(){
-    alert("The button desencriptar was pressed");
+    // regex expression
+    if(/([A-ZáàâãéèêÉíïÍóôõöÓúÚçñ])/.test(texto)){
+        alert("El texto no esta en el siguiente formato: \nSolo letras minúsculas y sin acentos");
+    } else if(texto.length == 0) {
+        document.querySelector(".sin-resultados").style.display = "flex";
+        document.querySelector(".box-texto-encriptado").style.display = "none";
+        alert("Ingrese el texto que desees encriptar o desencriptar");
+    }else{
+        const reemplazo = {
+            "enter": "e",
+            "imes": "i",
+            "ai": "a",
+            "ober": "o",
+            "ufat": "u"
+        };
+
+        Object.keys(reemplazo).forEach((key) => {
+            texto = texto.replaceAll(key, reemplazo[key]);
+        });
+    }
+    document.querySelector(".texto-encriptado").innerHTML = texto;
+    console.log(texto);
+    //alert("The button desencriptar was pressed");
 };
 
 function copiarFuncion(){
-    alert("The button copiar was pressed");
+    navigator.clipboard.writeText(texto).then(() => {
+        alert("Texto copiado: "+texto);
+    });
 };
