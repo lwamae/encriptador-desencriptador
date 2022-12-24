@@ -7,6 +7,8 @@ function encriptarFuncion(){
         alert("El texto no esta en el siguiente formato: \nSolo letras minúsculas y sin acentos");
     } else if(texto.length == 0) {        
         alert("Ingrese el texto que desees encriptar o desencriptar");
+        document.querySelector(".sin-resultados").style.display = "flex";
+        document.querySelector(".box-texto-encriptado").style.display = "none";
     }else{
         const reemplazo = {
             "e": "enter",

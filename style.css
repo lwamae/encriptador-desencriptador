@@ -78,6 +78,10 @@ button:focus {
     margin: 0px 16px 0px 0px;
 }
 
+.muneco {
+    display: none;
+}
+
 .resultados{
     height: auto;
     margin: 56px 16px 40px 16px;
@@ -132,11 +136,62 @@ button:focus {
     height: 67px;
 }
 
-@media screen and (min-width:768px){
-    
+footer p {    
+    font-size:16px;
+    text-align: center;
+    margin: 54px;
+    font-family: 'Inter', sans-serif;
+}
+
+@media only screen and (min-width:768px){
+    body {
+        padding: 24px;
+    }
+
+    .contenedor-botones {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .contenedor-botones button {
+        height: 67px;
+        width: 50%;
+    }
 
 }
 
+@media only screen and (min-width:1024px){
+    body {
+        padding: 24px 44px 24px 44px;
+    }
 
+    main {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding-bottom: 30px;
+    }
 
-/* todo: la animacion de pressing para los botones solo funciona en mobile */
+    .ingresar-texto {
+        width: 68%;
+        float: left;
+    }
+
+    .ingresar-texto textarea{
+        flex-grow: 3;
+    }
+
+    .muneco {
+        display: flex;
+        margin: 32px;
+    }
+
+    .resultados {
+        width: 32%;
+    }
+
+    .box-texto-encriptado {
+        flex-grow: 3;
+    }
+}
