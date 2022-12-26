@@ -6,9 +6,7 @@ function encriptarFuncion(){
     if(/([A-ZáàâãéèêÉíïÍóôõöÓúÚçñ])/.test(texto)){
         alert("El texto no esta en el siguiente formato: \nSolo letras minúsculas y sin acentos");
     } else if(texto.length == 0) {        
-        alert("Ingrese el texto que desees encriptar o desencriptar");
-        document.querySelector(".sin-resultados").style.display = "flex";
-        document.querySelector(".box-texto-encriptado").style.display = "none";
+        alertEmptyText();
     }else{
         const reemplazo = {
             "e": "enter",
@@ -29,13 +27,11 @@ function encriptarFuncion(){
 };
 
 function desencriptarFuncion(){
-    // regex expression
+    texto = document.getElementById("texto-ingresado").value;
     if(/([A-ZáàâãéèêÉíïÍóôõöÓúÚçñ])/.test(texto)){
         alert("El texto no esta en el siguiente formato: \nSolo letras minúsculas y sin acentos");
     } else if(texto.length == 0) {
-        document.querySelector(".sin-resultados").style.display = "flex";
-        document.querySelector(".box-texto-encriptado").style.display = "none";
-        alert("Ingrese el texto que desees encriptar o desencriptar");
+        alertEmptyText();
     }else{
         const reemplazo = {
             "enter": "e",
@@ -48,10 +44,10 @@ function desencriptarFuncion(){
         Object.keys(reemplazo).forEach((key) => {
             texto = texto.replaceAll(key, reemplazo[key]);
         });
+        document.querySelector(".sin-resultados").style.display = "none";
+        document.querySelector(".box-texto-encriptado").style.display = "flex";
+        document.querySelector(".texto-encriptado").innerHTML = texto;
     }
-    document.querySelector(".texto-encriptado").innerHTML = texto;
-    console.log(texto);
-    //alert("The button desencriptar was pressed");
 };
 
 function copiarFuncion(){
@@ -59,3 +55,9 @@ function copiarFuncion(){
         alert("Texto copiado: "+texto);
     });
 };
+
+function alertEmptyText(){
+    document.querySelector(".sin-resultados").style.display = "flex";
+    document.querySelector(".box-texto-encriptado").style.display = "none";
+    alert("Ingrese el texto que desees encriptar o desencriptar");
+}
